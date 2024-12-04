@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Lab3 {
+    public static void main(String[] args) {
+        String text = "This is the text to match.";
+
+        String bestCase = "This is the text to match.";
+        String worstCase = "This is a very very long text that could simulate a worst-case scenario where the match function takes longer to execute due to size or complexity.";
+
+        long startTime = System.nanoTime();
+        match(bestCase);
+        long endTime = System.nanoTime();
+        long elapsedTimeBestCase = endTime - startTime;
+        System.out.println("Elapsed time for best case: " + elapsedTimeBestCase + " nanoseconds");
+
+        startTime = System.nanoTime();
+        match(worstCase);
+        endTime = System.nanoTime();
+        long elapsedTimeWorstCase = endTime - startTime;
+        System.out.println("Elapsed time for worst case: " + elapsedTimeWorstCase + " nanoseconds");
+    }
+
+    public static boolean match(String text) {
+        return text.contains("text");
+    }
+
+    public static boolean isMatched(String text) {
+        return text.equals("text");
+    }
+}
